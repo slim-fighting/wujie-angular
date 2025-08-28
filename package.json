@@ -1,9 +1,15 @@
 {
   "name": "wujie-angular",
   "version": "0.0.0",
+  "packageManager": "pnpm@10.15.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 4200",
+    "dev": "turbo run dev --parallel --filter=!ngx-wujie",
+    "dev1": "concurrently \"pnpm dev:host\" \"pnpm dev:vue\" \"pnpm dev:react\"",
+    "dev:host": "ng serve wujie-angular --port 4200",
+    "dev:react": "cd apps/react-subapp && pnpm dev",
+    "dev:vue": "cd apps/vue-subapp && pnpm dev",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -19,6 +25,7 @@
     "@angular/router": "^19.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "wujie": "^1.0.29",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
@@ -26,12 +33,15 @@
     "@angular/cli": "^19.2.15",
     "@angular/compiler-cli": "^19.2.0",
     "@types/jasmine": "~5.1.0",
+    "concurrently": "^9.2.1",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^19.2.0",
+    "turbo": "^2.5.6",
     "typescript": "~5.7.2"
   }
 }
