@@ -9,11 +9,6 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "paths": {
-      "ngx-wujie": [
-        "./dist/ngx-wujie"
-      ]
-    },
     "skipLibCheck": true,
     "isolatedModules": true,
     "esModuleInterop": true,

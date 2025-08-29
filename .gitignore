@@ -47,3 +47,4 @@ Thumbs.db
 
 /apps/react-subapp/node_modules
 /apps/vue-subapp/node_modules
+/apps/ngx-wujie/node_modules
